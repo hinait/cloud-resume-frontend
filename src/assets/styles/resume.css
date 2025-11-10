@@ -1,0 +1,220 @@
+:root {
+  --bg: #fdfdf9;
+  --text: #2e2e2e;
+  --muted: #6b6b6b;
+  --line: rgba(0, 0, 0, 0.08);
+  --card: #ffffff;
+  --primary: #5979a9;
+  --primary-soft: #aec3df;
+  --white: #ffffff;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif;
+}
+
+/* Container */
+.resume-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.resume-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand-badge {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--primary);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+/* Hero */
+.resume-hero {
+  text-align: center;
+  padding: 80px 20px 50px;
+}
+.h1 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.subtitle {
+  color: var(--muted);
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.meta {
+  display: flex;
+  justify-content: flex-start;
+  gap: 18px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.lead {
+  margin-top: 20px;
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.9;         /* 增加行高 */
+  margin-bottom: 1rem;      /* 增加段落之間的距離（只對多段落生效） */
+}
+
+.resume-container li {
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.resume-container strong {
+  display: block;             /* 每個 strong 都變成獨立一行，像標題 */
+  font-size: 19px;            /* 比正文大一點點，看起來像小標題 */
+  font-weight: 600;           /* 你已經用了 strong，但可以加強清晰度 */
+  margin-top: 1.2rem;         /* 與上一段拉開距離 */
+  margin-bottom: 0.9rem;      /* 與 ul 拉開距離 */
+  color: var(--text);         /* 可選：確保標題不是灰色 muted 字 */
+}
+
+.action-row {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Buttons */
+.btn, .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .45rem .9rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 14px;
+  border: 1px solid var(--line);
+  transition: all 0.2s ease;
+}
+.btn {
+  background: var(--white);
+  color: var(--text);
+}
+.btn:hover {
+  background: var(--primary-soft);
+  color: var(--white);
+}
+.btn-primary {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+}
+.btn-primary:hover {
+  background: #496795;
+}
+
+/* Section */
+.resume-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  border-top: 1px solid var(--line);
+}
+.h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+/* Grid */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* ✅ 固定三欄 */
+  gap: 1.2rem;
+}
+
+/* Cards */
+.card-glass {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+  transition: transform .2s ease, box-shadow .2s ease;
+  min-height: 100px;
+  text-align: center;
+}
+.card-glass:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.card-title {
+  font-weight: 600;
+  color: var(--text);
+}
+.card-muted {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* Chips */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: .6rem;
+}
+.chip {
+  border: 1px solid var(--line);
+  background: #f6f7fa;
+  padding: .25rem .6rem;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  padding: 40px 0;
+}
+
+.profile-photo {
+ width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
