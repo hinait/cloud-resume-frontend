@@ -64,31 +64,10 @@ const SKILL_GROUPS = [
 ];
 
 const CERTS = [
-  { name: "AWS Certified Cloud Practitioner", when: "2025", pdf: "/certs/AWS Certified Cloud Practitioner Certificate" },
-  { name: "Certified Tester Foundation Level (ISTQB)", when: "2024",pdf: "/certs/ISTQB Certification-2024.pdf" },
-  { name: "Scrum Master", when: "2024",pdf: "/certs/Professional Scrum Master I-2024.pdf" },
-  { name: "IELTS 6.5", when: "2023",pdf: "/certs/IELTS transcript-2023.pdf" },
-];
-
-const PROJECTS = [
-  {
-    name: "Cloud Resume Challenge",
-    blurb: "Inspired by cloud challenge and Built a React frontend and Node.js backend. Deployed with API Gateway, Lambda, implemented a simple analytics counter, and hosted on a personal domain.",
-    href: "#",
-    tags: ["API Gateway", "Lambda", "DynamoDB", "React"],
-  },
-  {
-    name: "Nutrition App (RN + Node + MySQL)",
-    blurb: "Daily meals & weight tracking; Node/Express backend on EC2; Nginx reverse proxy; HTTPS.",
-    href: "#",
-    tags: ["React Native", "Node", "EC2", "MySQL"],
-  },
-  {
-    name: "Nova Health Internship Portal",
-    blurb: "React + Node + FileMaker Data API; Amplify hosting; Windows EC2 reverse proxy; dashboards.",
-    href: "#",
-    tags: ["React", "FileMaker", "Amplify", "EC2"],
-  },
+  { name: "AWS Certified Cloud Practitioner", when: "2025" },
+  { name: "Certified Tester Foundation Level (ISTQB)", when: "2024" },
+  { name: "Scrum Master", when: "2024" },
+  { name: "IELTS 6.5", when: "2023" },
 ];
 
 // -----------------------------
@@ -159,23 +138,6 @@ useEffect(() => {
     .catch((err) => console.error("Fetch error:", err));
 }, []);
 
-
-const handleDownloadClick = (cert) => {
-  setSelectedCert(cert);
-  setShowModal(true);
-};
-
-const confirmDownload = () => {
-  if (selectedCert?.pdf) {
-    window.open(selectedCert.pdf, "_blank");
-  }
-  setShowModal(false);
-};
-
-const cancelDownload = () => {
-  setShowModal(false);
-  setSelectedCert(null);
-};
 
 const [showResumeModal, setShowResumeModal] = React.useState(false);
 
@@ -266,43 +228,52 @@ const cancelResumeDownload = () => {
 </div>
 
 {/* Work Experience */}
-<div className="resume-section">
+<div className="resume-section work-experience">
   <h2 className="h2">Work Experience</h2>
   <p className="lead">
     <strong>Full-Stack Developer & Project Manager – Nova IT Internship(July of 2025- Oct of 2025, New Zealand)</strong>
-   Served as a Full-Stack Developer and Project Manager during a three-monthinternship, contributing to the development and deployment of a FileMaker-integrated web application that improved Nova IT’s internal operations whilecollaborating with multicultural teams across China, India, and Australia.
+   Led cross-functional delivery as a Full-Stack Developer and Project Manager, aligning scope, timeline, and
+deliverables with developers and testers; built end-to-end website and deployed to the cloud for the stakeholders.
    <ul style={{ marginTop: "0.6rem", paddingLeft: "1.5rem", lineHeight: "1.8" }}>
-      <li>Developed frontend pages with React.js and backend APIs with Node.js,integrating with the company’s FileMaker database to enable data search, edit,and export functions.</li>
-      <li>Deployed both frontend and backend to the cloud. Frontend on AWS Amplify,backend on EC2, and configured Nginx and custom domain settings for production environment.</li>
-      <li>Software Project Management: Analyzed client requirements, tracked deliverables, distributed tasks, and coordinated testers and developers;prepared project documents and progress reports; facilitated stakeholdermeetings.</li>
+      <li>Built the website end-to-end (React.js frontend, Node.js backend) integrated with FileMaker Database for
+search/filter/export functions.</li>
+      <li>Deployed the frontend on AWS Amplify and the backend on Amazon EC2 behind Nginx; configured a custom
+domain for production.</li>
+      <li>Software Project Management: Clarified client requirements into user stories ; tracked deliverables and
+dependencies; coordinated developers and testers; produced status reports for stakeholders; facilitated Scrum
+meetings and reviews.</li>
     </ul>
     <strong>Senior Project Manager – CLEVO(Oct of 2010–Sep of 2023, Taipei)</strong>
-    Senior Project Manager for standard and ODM laptop programs (incl. EPSON), orchestrating 25+ cross-functional teams from RFQ to MP to hit schedule, quality, and cost targets.
+    Led 13+ standard and ODM projects, including Epson, from RFQ to mass production using Waterfall. Managed
+cross-functional teams of 25+ and ensured on-time delivery through NPI (New Product Introduction) processes.
    <ul style={{ marginTop: "0.6rem", paddingLeft: "1.5rem", lineHeight: "1.8" }}>
-      <li>Led both standard and ODM laptop projects, including ODM projects forEPSON, managing the full lifecycle from RFQ to mass production.</li>
-      <li>Coordinated project planning, feasibility reviews, and deliverables withinternal and client teamsCross.</li>
-      <li>Managed cross-functional teams of 25+ across hardware, software,mechanical design, manufacturing, and supply chain•.</li>
-      <li>Conducted kick-off and gate meetings to align scope, timeline, andresponsibilities.</li>
+    <li>Coordinated project planning, RFQ preparation, and feasibility reviews with engineers</li>
+      <li>Led kick-off and gate meetings with internal and client teams on scope, timeline, and deliverables.</li>
+      <li>Managed cross-functional teams of 25+ across hardware, software,mechanical design, manufacturing, and supply
+chain.</li>
+      <li>Effectively managed schedule control, risk mitigation, and production throughout the entire product lifecycle.</li>
+      <li>Stakeholder management: primary liaison for international clients (Epson); delivered clear status updates
+(progress, risks) and managed expectations.</li>
     </ul>
     <strong>Project Manager – VIVOTEK (July of 2019–Sep of 2020, Taipei)</strong>
-    Led smart home initiatives at IoT, radar, and 5G-enabled camera solutions from concept to prototype with Agile delivery.
+    Led IoT projects for radar and camera systems in the smart home market.
        <ul style={{ marginTop: "0.6rem", paddingLeft: "1.5rem", lineHeight: "1.8" }}>
-      <li>Directed Agile projects to explore opportunities in the smart home market,focusing on IoT, radar, and 5G-enabled camera solutions.</li>
-      <li>Managed development schedules and resolved issues across hardware,firmware, mechanical, and software teams, as well as external vendors.</li>
-      <li>Led project planning, Scrum meetings, prototype validation, and issuetracking to ensure timely development and testing.</li>
+      <li>Managed prototypes IoT projects, project schedules, production planning, and issue tracking.</li>
+      <li>Held regular Scrum meetings with engineering teams (hardware, mechanical, firmware, software) to monitor
+project progress.</li>
     </ul>
      <strong>Assistant Project Manager – CASWELL (April of 2017–July of 2019, Taipei)</strong>
-    Supported end-to-end lifecycle management for a 78+ product networking/firewall portfolio, coordinating NPI and production planning to keep launches on schedule and within budget.
+    Led NPI(New Product Introduction) and lifecycle management for networking hardware, including 14+ new
+product launches and 78+ maintenance products.
        <ul style={{ marginTop: "0.6rem", paddingLeft: "1.5rem", lineHeight: "1.8" }}>
-      <li>Oversaw the lifecycle of 78+ networking and firewall products, including issueresolution, quality assurance, and material substitutions.</li>
-      <li>Managed BOMs and monitored key components (e.g., SSD, RAM) forcompatibility and availability.</li>
-      <li>Coordinated production for PCB/PCBA lines, aligning inventory with salesforecasts and ensuring timely procurement under budget constraints.</li>
-      <li>Led production planning across EVT, DVT, and PVT stages for 14+ newproduct launches.</li>
-      <li>Supported NPI (New Product Introduction) for standard products, leading planning, bug reviews, and cross-functional issue resolution.</li>
-      <li>Managed product pricing and quotations for B2B markets.</li>
+      <li>Managed project schedules, issue tracking, and production planning across NPI stages.</li>
+      <li>Oversaw the lifecycle of network cards, resolving quality issues and material shortages.</li>
+      <li>Coordinated PCB/PCBA production planning based on forecasts and inventory levels.</li>
+      <li>Maintained BOM(Bill of Materials) and monitored key components (e.g., SSD, RAM) for compatibility and
+availability.</li>
     </ul>
     <strong>Manager Assistant – Sunkind (July of 2015–Sep of 2017, Taipei)</strong>
-    Assisted in managing administrative tasks, preparing quotations, andcoordinating project schedules to ensure timely deliverables.
+    Tracked and managed all project progress and coordination for IT infrastructure construction.
   </p>
 </div>
 
@@ -326,24 +297,44 @@ const cancelResumeDownload = () => {
     </div>
   ))}
 </div>
-
-      {/* Projects */}
-      <div className="resume-section">
-        <h2 className="h2">Projects</h2>
-        <div className="grid-3">
-          {PROJECTS.map((p, i) => (
-            <motion.a key={i} href={p.href} className="card-glass"
-              initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-              transition={{ duration: .4, delay: i * .05 }}>
-              <div className="card-title">
-  <span style={{ textDecoration: "underline" }}>{p.name}</span>
+      {/* Cloud Architecture Diagram */}
+<div className="resume-section">
+  <h2 className="h2">Cloud Architecture Diagram</h2>
+  <img
+    src="/cv/cloudarchitecture.png"
+    alt="Cloud Architecture"
+    style={{ maxWidth: "100%", borderRadius: "10px", boxShadow: "0 4px 12px rgba(0,0,0,0.1)" }}
+  />
 </div>
-              <div className="card-muted">{p.blurb}</div>
-              <div className="chips">{p.tags.map((t, j) => <Chip key={j}>{t}</Chip>)}</div>
-            </motion.a>
-          ))}
-        </div>
-      </div>
+
+{/* Key Projects */}
+<div className="resume-section">
+    <strong style={{ marginBottom: "0", display: "block" }}>
+    Project 1: Cloud Resume Challenge
+  </strong>
+  <p className="lead">
+    This live website showcases my full-stack cloud resume project. It features a React-based frontend and a Node.js backend, deployed using AWS services including Lambda (serverless), API Gateway (routing), DynamoDB (visitor counter), and S3 (asset hosting).<br />
+    <a href="https://github.com/hinait/cloud-resume-backend" target="_blank" rel="noreferrer">Visit GitHub repo →</a>
+  </p>
+<strong style={{ marginBottom: "0", display: "block" }}>
+    Project 2: Nutrition Tracking Website
+  </strong>
+  <p className="lead">
+    Built a React.js UI and collaborated with a Python backend team to
+query the USDA FoodData API; implemented search functionality with responsive, user-friendly results pages.<br />
+    <a href="https://github.com/hinait/nutrition_website_frontend" target="_blank" rel="noreferrer">View GitHub repo →</a>
+  </p>
+<strong style={{ marginBottom: "0", display: "block" }}>
+    Project 3: FileMaker Integration Intern Project (Nova IT)
+  </strong>
+    <p className="lead">
+  Full-Stack Developer & PM Delivered a
+React frontend and Node.js backend integrating the FileMaker database ; built the
+Remittance page end-to-end and deployed on AWS Amplify (frontend) and EC2 + Nginx (backend). Worked in
+Scrum with stakeholder and internal team.<br />
+    <a href="https://github.com/A2025Y/nova-health-filemaker-integration-backend" target="_blank" rel="noreferrer">View GitHub repo →</a>
+  </p>
+</div>
 
       {/* Certifications */}
       <div className="resume-section">
@@ -353,17 +344,15 @@ const cancelResumeDownload = () => {
       <motion.div
         key={i}
         className="card-glass"
-        onClick={() => handleDownloadClick(c)}
         style={{ cursor: "pointer", position: "relative" }}
         initial={{ opacity: 0, y: 8 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: .4, delay: i * .05 }}
-        title="Click to download"
       >
         <div className="card-title">{c.name}</div>
         <div className="card-muted">{c.when}</div>
-        <Download size={14} style={{ position: "absolute", bottom: 12, right: 12, color: "#888" }} />
+      
       </motion.div>
     ))}
   </div>
@@ -375,12 +364,7 @@ const cancelResumeDownload = () => {
       Visitor Count: {visitorCount}
     </span>
   )}</footer>
-      <ConfirmModal
-  show={showModal}
-  certName={selectedCert?.name}
-  onConfirm={confirmDownload}
-  onCancel={cancelDownload}
-/>
+ 
 <ConfirmModal
   show={showResumeModal}
   certName="Hina's Resume"

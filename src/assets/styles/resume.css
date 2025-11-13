@@ -80,7 +80,7 @@ body {
   font-size: 14px;
 }
 .lead {
-  margin-top: 20px;
+  margin-top: 16px;
   font-size: 17px;
   color: var(--muted);
   line-height: 1.9;         /* 增加行高 */
@@ -96,9 +96,18 @@ body {
   display: block;             /* 每個 strong 都變成獨立一行，像標題 */
   font-size: 19px;            /* 比正文大一點點，看起來像小標題 */
   font-weight: 600;           /* 你已經用了 strong，但可以加強清晰度 */
-  margin-top: 1.2rem;         /* 與上一段拉開距離 */
+  margin-top: 0.8rem;         /* 與上一段拉開距離 */
   margin-bottom: 0.9rem;      /* 與 ul 拉開距離 */
   color: var(--text);         /* 可選：確保標題不是灰色 muted 字 */
+}
+
+/* 用更具體的 class 限定 strong */
+.resume-container .work-experience strong {
+  display: block;
+  font-size: 19px;
+  font-weight: 600;
+  margin-top: 1.2rem;
+  margin-bottom: 0.9rem;
 }
 
 .action-row {
@@ -141,13 +150,13 @@ body {
 .resume-section {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 30px 20px;
   border-top: 1px solid var(--line);
 }
 .h2 {
   font-size: 24px;
   font-weight: 700;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 /* Grid */
