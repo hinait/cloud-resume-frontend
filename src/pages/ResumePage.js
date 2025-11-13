@@ -173,21 +173,11 @@ const cancelResumeDownload = () => {
         </div>
       </header>
 
-      {/* Hero */}
 {/* Hero */}
 <div className="resume-hero">
-  <div style={{ 
-    display: "flex", 
-    alignItems: "center", 
-    justifyContent: "space-between", 
-    flexWrap: "wrap", 
-    gap: 24, 
-    maxWidth: 1100, 
-     margin: "0 auto",          
-    padding: "0 20px",
-  }}>
+   <div className="hero-inner">
     {/* 左側：文字 */}
-    <div style={{ flex: 1, minWidth: "280px", textAlign: "left" }}>
+    <div className="hero-text">
       <motion.h1 className="h1" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
         {PROFILE.name}
       </motion.h1>
@@ -199,8 +189,8 @@ const cancelResumeDownload = () => {
       <p className="lead"><span ref={rotatingRef} /></p>
       <div className="action-row">
         <a className="btn-primary" style={{ cursor: "pointer" }} onClick={handleResumeClick}>
-  <ExternalLink size={16} /> Download Resume
-</a>
+          <ExternalLink size={16} /> Download Resume
+        </a>
         <a className="btn" href={`mailto:${PROFILE.email}`}><Mail size={16} /> Contact</a>
       </div>
     </div>
@@ -222,11 +212,26 @@ const cancelResumeDownload = () => {
     I’m a Project Manager with over seven years of experience leading large-scale projects.<br />
     I’m now expanding into software and cloud development, having recently earned my Master of Information Technology in New Zealand.<br />
     My background spans managing global ODM teams in hardware, including laptops, IoT devices, and networking products.<br /><br />
-    During my internship at Nova IT, I also led full-stack development projects, working with React, Node.js, and AWS.
     
-    I bridge communication between clients, engineers, andstakeholders to ensure that technical outcomes align with business goals.
     With experience in both Waterfall and Scrum, I’m passionate about leading projects that deliver meaningful results.<br />
   </p>
+</div>
+
+{/* Education */}
+<div className="resume-section education-section">
+  <h2 className="h2">Education</h2>
+
+  <div className="edu-item">
+    <h3 className="edu-school">University of Waikato</h3>
+    <p className="edu-degree">Master of Information Technology</p>
+    <p className="edu-meta">Hamilton, New Zealand · Feb 2024 – Nov 2025</p>
+  </div>
+
+  <div className="edu-item">
+    <h3 className="edu-school">Feng Chia University</h3>
+    <p className="edu-degree">Bachelor of Economics</p>
+    <p className="edu-meta">Taichung, Taiwan · Sep 2011 – Sep 2015</p>
+  </div>
 </div>
 
 {/* Work Experience */}
@@ -235,7 +240,7 @@ const cancelResumeDownload = () => {
   <p className="lead">
     <strong>Full-Stack Developer & Project Manager – Nova IT Internship (July of 2025- Oct of 2025, New Zealand)</strong>
    Led cross-functional delivery as a Full-Stack Developer and Project Manager, aligning scope, timeline, and
-deliverables with developers and testers; built end-to-end website and deployed to the cloud for the stakeholders.
+deliverables with developers and testers.</p>
    <ul style={{ marginTop: "0.6rem", paddingLeft: "1.5rem", lineHeight: "1.8" }}>
       <li>Built the website end-to-end (React.js frontend, Node.js backend) integrated with FileMaker Database for
 search/filter/export functions.</li>
@@ -245,9 +250,10 @@ domain for production.</li>
 dependencies; coordinated developers and testers; produced status reports for stakeholders; facilitated Scrum
 meetings and reviews.</li>
     </ul>
-    <strong>Senior Project Manager – CLEVO (Oct of 2010–Sep of 2023, Taipei)</strong>
-    Led 13+ standard and ODM projects, including Epson, from RFQ to mass production using Waterfall. Managed
-cross-functional teams of 25+ and ensured on-time delivery through NPI (New Product Introduction) processes.
+    <p className="lead">
+    <strong>Senior Project Manager – CLEVO (Oct of 2020–Sep of 2023, Taipei)</strong>
+    Led 13+ standard and ODM projects, including Epson, from RFQ to mass production using Waterfall.
+    </p>
    <ul style={{ marginTop: "0.6rem", paddingLeft: "1.5rem", lineHeight: "1.8" }}>
     <li>Coordinated project planning, RFQ preparation, and feasibility reviews with engineers</li>
       <li>Led kick-off and gate meetings with internal and client teams on scope, timeline, and deliverables.</li>
@@ -257,16 +263,17 @@ chain.</li>
       <li>Stakeholder management: primary liaison for international clients (Epson); delivered clear status updates
 (progress, risks) and managed expectations.</li>
     </ul>
+      <p className="lead">
     <strong>Project Manager – VIVOTEK (July of 2019–Sep of 2020, Taipei)</strong>
-    Led IoT projects for radar and camera systems in the smart home market.
+    Led IoT projects for radar and camera systems in the smart home market.</p>
        <ul style={{ marginTop: "0.6rem", paddingLeft: "1.5rem", lineHeight: "1.8" }}>
       <li>Managed prototypes IoT projects, project schedules, production planning, and issue tracking.</li>
       <li>Held regular Scrum meetings with engineering teams (hardware, mechanical, firmware, software) to monitor
 project progress.</li>
     </ul>
+      <p className="lead">
      <strong>Assistant Project Manager – CASWELL (Sep of 2017–April of 2019, Taipei)</strong>
-    Led NPI(New Product Introduction) and lifecycle management for networking hardware, including 14+ new
-product launches and 78+ maintenance products.
+    Led NPI(New Product Introduction) and lifecycle management for networking products.</p>
        <ul style={{ marginTop: "0.6rem", paddingLeft: "1.5rem", lineHeight: "1.8" }}>
       <li>Managed project schedules, issue tracking, and production planning across NPI stages.</li>
       <li>Oversaw the lifecycle of network cards, resolving quality issues and material shortages.</li>
@@ -274,9 +281,10 @@ product launches and 78+ maintenance products.
       <li>Maintained BOM(Bill of Materials) and monitored key components (e.g., SSD, RAM) for compatibility and
 availability.</li>
     </ul>
+    <p className="lead">
     <strong>Manager Assistant – Sunkind (Aug of 2015–Sep of 2017, Taipei)</strong>
-    Tracked and managed all project progress and coordination for IT infrastructure construction.
-  </p>
+    Tracked and managed all project progress and coordination for IT infrastructure construction.</p>
+  
 </div>
 
       {/* Skills */}
@@ -341,7 +349,7 @@ Scrum with stakeholder and internal team.<br />
       {/* Certifications */}
       <div className="resume-section">
         <h2 className="h2">Certifications</h2>
-  <div className="grid-3">
+  <div className="grid-3 cert-grid">
     {CERTS.map((c, i) => (
       <motion.div
         key={i}
