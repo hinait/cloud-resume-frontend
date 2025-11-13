@@ -143,7 +143,12 @@ const handleResumeClick = () => {
 };
 
 const confirmResumeDownload = () => {
-  window.open("/cv/HINA_CV.pdf", "_blank");
+   const link = document.createElement('a');
+  link.href = "/cv/HINA_CV.pdf";
+  link.download = "HINA_CV.pdf"; // 
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
   setShowResumeModal(false);
 };
 
