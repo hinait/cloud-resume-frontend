@@ -126,9 +126,6 @@ export default function ResumePage() {
   useRotatingText(rotatingRef, ROTATING_LINES);
   const tYear = useMemo(() => new Date().getFullYear(), []);
   
-  const [showModal, setShowModal] = React.useState(false);
-const [selectedCert, setSelectedCert] = React.useState(null);
-
 const [visitorCount, setVisitorCount] = React.useState(null);
 
 useEffect(() => {
@@ -301,7 +298,7 @@ availability.</li>
 <div className="resume-section">
   <h2 className="h2">Cloud Architecture Diagram</h2>
   <img
-    src="/cv/cloudarchitecture.png"
+    src="/cv/export.png"
     alt="Cloud Architecture"
     style={{ maxWidth: "100%", borderRadius: "10px", boxShadow: "0 4px 12px rgba(0,0,0,0.1)" }}
   />
@@ -313,7 +310,7 @@ availability.</li>
     Project 1: Cloud Resume Challenge
   </strong>
   <p className="lead">
-    This live website showcases my full-stack cloud resume project. It features a React-based frontend and a Node.js backend, deployed using AWS services including Lambda (serverless), API Gateway (routing), DynamoDB (visitor counter), and S3 (asset hosting).<br />
+    This live website showcases my full-stack cloud resume project. It features a React-based frontend and a Node.js backend, deployed using AWS services including Lambda (serverless), API Gateway (routing), DynamoDB (visitor counter), and Amplify.<br />
     <a href="https://github.com/hinait/cloud-resume-backend" target="_blank" rel="noreferrer">Visit GitHub repo →</a>
   </p>
 <strong style={{ marginBottom: "0", display: "block" }}>
