@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef } from "react";
 import { motion } from "framer-motion";
 import {
   Github, ExternalLink, Mail, MapPin, Award,
-  Cpu, Database, Cloud, Code2, ShieldCheck, Globe2, BarChart3, Linkedin,Users, ClipboardList, ListTodo, Repeat,Wrench
+  Cpu, Database, Cloud, Code2, ShieldCheck, Globe2, BarChart3, Linkedin,Users, ClipboardList, ListTodo, Repeat,Wrench,Download
 } from "lucide-react";
 import "../assets/styles/resume.css"; // ✅ 確認有引入新的 CSS
 import profileImg from '../assets/profile.png';
@@ -22,7 +22,7 @@ const PROFILE = {
 };
 
 const ROTATING_LINES = [
-  "7+ years hardware/IoT program delivery",
+  "7+ years projects delivery",
   "Full‑stack internship: React · Node.js · AWS",
   "Bridging PM discipline with cloud development",
   "Scrum + Waterfall · client‑focused outcomes",
@@ -33,7 +33,6 @@ const SKILL_GROUPS = [
     category: "Cloud",
     skills: [
       { label: "AWS", icon: Cloud },
-      { label: "Docker", icon: ShieldCheck },
       { label: "Nginx / SSL", icon: Globe2 },
     ],
   },
@@ -57,23 +56,24 @@ const SKILL_GROUPS = [
     skills: [
       { label: "Project Management", icon: ClipboardList },
       { label: "Framework: Waterfall / Scrum", icon: Repeat },
-      { label: "Stakeholder Communication", icon: Users },
+      { label: "Stakeholder Management and Communication", icon: Users },
+      { label: "Risk Identification and Mitigation", icon: ListTodo },
+      { label: "Cross-functional Leadership and Facilitation", icon: BarChart3 },
     ],
   },
 ];
 
 const CERTS = [
-  { name: "AWS Certified Cloud Practitioner", when: "2025" },
-  { name: "Certified Tester Foundation Level (ISTQB)", when: "2025" },
-  { name: "Scrum Master", when: "2024" },
-  { name: "IELTS 6.5", when: "" },
-  { name: "TOEIC", when: "" },
+  { name: "AWS Certified Cloud Practitioner", when: "2025", pdf: "/certs/AWS Certified Cloud Practitioner Certificate" },
+  { name: "Certified Tester Foundation Level (ISTQB)", when: "2024",pdf: "/certs/ISTQB Certification-2024.pdf" },
+  { name: "Scrum Master", when: "2024",pdf: "/certs/Professional Scrum Master I-2024.pdf" },
+  { name: "IELTS 6.5", when: "2023",pdf: "/certs/IELTS transcript-2023.pdf" },
 ];
 
 const PROJECTS = [
   {
     name: "Cloud Resume Challenge",
-    blurb: "Serverless visitor counter (API Gateway + Lambda + DynamoDB), custom domain, CI/CD.",
+    blurb: "Inspired by cloud challenge and Built a React frontend and Node.js backend. Deployed with API Gateway, Lambda, implemented a simple analytics counter, and hosted on a personal domain.",
     href: "#",
     tags: ["API Gateway", "Lambda", "DynamoDB", "React"],
   },
@@ -116,6 +116,25 @@ function useRotatingText(ref, messages, interval = 2600, fadeMs = 420) {
 }
 
 // -----------------------------
+// Pop up Window
+// -----------------------------
+function ConfirmModal({ show, onConfirm, onCancel, certName }) {
+  if (!show) return null;
+
+  return (
+    <div className="modal-backdrop">
+      <div className="modal-box">
+        <p>Do you want to download<strong>{certName}?</strong></p>
+        <div className="modal-buttons">
+          <button className="btn-primary" onClick={onConfirm}>Yes</button>
+          <button className="btn" onClick={onCancel}>Cancel</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// -----------------------------
 // Components
 // -----------------------------
 const Chip = ({ children }) => <span className="chip">{children}</span>;
@@ -127,6 +146,41 @@ export default function ResumePage() {
   const rotatingRef = useRef(null);
   useRotatingText(rotatingRef, ROTATING_LINES);
   const tYear = useMemo(() => new Date().getFullYear(), []);
+  
+  const [showModal, setShowModal] = React.useState(false);
+const [selectedCert, setSelectedCert] = React.useState(null);
+
+const handleDownloadClick = (cert) => {
+  setSelectedCert(cert);
+  setShowModal(true);
+};
+
+const confirmDownload = () => {
+  if (selectedCert?.pdf) {
+    window.open(selectedCert.pdf, "_blank");
+  }
+  setShowModal(false);
+};
+
+const cancelDownload = () => {
+  setShowModal(false);
+  setSelectedCert(null);
+};
+
+const [showResumeModal, setShowResumeModal] = React.useState(false);
+
+const handleResumeClick = () => {
+  setShowResumeModal(true);
+};
+
+const confirmResumeDownload = () => {
+  window.open("/cv/HINA_CV.pdf", "_blank");
+  setShowResumeModal(false);
+};
+
+const cancelResumeDownload = () => {
+  setShowResumeModal(false);
+};
 
   return (
     <div className="resume-container">
@@ -155,7 +209,7 @@ export default function ResumePage() {
     flexWrap: "wrap", 
     gap: 24, 
     maxWidth: 1100, 
-     margin: "0 auto",          // ✅ 確保區塊置中
+     margin: "0 auto",          
     padding: "0 20px",
   }}>
     {/* 左側：文字 */}
@@ -170,7 +224,9 @@ export default function ResumePage() {
       </p>
       <p className="lead"><span ref={rotatingRef} /></p>
       <div className="action-row">
-        <a className="btn-primary" href="/HinaLin_CV.pdf" target="_blank"><ExternalLink size={16} /> Download Résumé</a>
+        <a className="btn-primary" style={{ cursor: "pointer" }} onClick={handleResumeClick}>
+  <ExternalLink size={16} /> Download Resume
+</a>
         <a className="btn" href={`mailto:${PROFILE.email}`}><Mail size={16} /> Contact</a>
       </div>
     </div>
@@ -264,7 +320,7 @@ export default function ResumePage() {
       {/* Projects */}
       <div className="resume-section">
         <h2 className="h2">Projects</h2>
-        <div className="grid-2">
+        <div className="grid-3">
           {PROJECTS.map((p, i) => (
             <motion.a key={i} href={p.href} className="card-glass"
               initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
@@ -280,18 +336,41 @@ export default function ResumePage() {
       {/* Certifications */}
       <div className="resume-section">
         <h2 className="h2">Certifications</h2>
-        <div className="grid-2">
-          {CERTS.map((c, i) => (
-            <div key={i} className="card-glass">
-              <div className="card-title">{c.name}</div>
-              <div className="card-muted">{c.when}</div>
-            </div>
-          ))}
-        </div>
+  <div className="grid-3">
+    {CERTS.map((c, i) => (
+      <motion.div
+        key={i}
+        className="card-glass"
+        onClick={() => handleDownloadClick(c)}
+        style={{ cursor: "pointer", position: "relative" }}
+        initial={{ opacity: 0, y: 8 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: .4, delay: i * .05 }}
+        title="Click to download"
+      >
+        <div className="card-title">{c.name}</div>
+        <div className="card-muted">{c.when}</div>
+        <Download size={14} style={{ position: "absolute", bottom: 12, right: 12, color: "#888" }} />
+      </motion.div>
+    ))}
+  </div>
       </div>
 
       {/* Footer */}
       <footer className="footer">© {tYear} {PROFILE.name}. Built with React.</footer>
+      <ConfirmModal
+  show={showModal}
+  certName={selectedCert?.name}
+  onConfirm={confirmDownload}
+  onCancel={cancelDownload}
+/>
+<ConfirmModal
+  show={showResumeModal}
+  certName="Hina's Resume"
+  onConfirm={confirmResumeDownload}
+  onCancel={cancelResumeDownload}
+/>
     </div>
   );
 }
