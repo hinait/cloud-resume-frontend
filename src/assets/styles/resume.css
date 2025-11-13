@@ -14,13 +14,16 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif;
+  overflow-x: hidden;
+   max-width: 100vw; 
 }
-
 /* Container */
 .resume-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+   max-width: 100vw; 
+   overflow-x: hidden; 
 }
 
 /* Header */
@@ -284,4 +287,34 @@ body {
   border-radius: 6px;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .resume-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 60px 16px 40px;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .profile-photo {
+    width: 180px;
+    height: 180px;
+    margin-top: 20px;
+  }
+
+  .action-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .meta {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
 

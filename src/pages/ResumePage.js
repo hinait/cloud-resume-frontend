@@ -233,7 +233,7 @@ const cancelResumeDownload = () => {
 <div className="resume-section work-experience">
   <h2 className="h2">Work Experience</h2>
   <p className="lead">
-    <strong>Full-Stack Developer & Project Manager – Nova IT Internship(July of 2025- Oct of 2025, New Zealand)</strong>
+    <strong>Full-Stack Developer & Project Manager – Nova IT Internship (July of 2025- Oct of 2025, New Zealand)</strong>
    Led cross-functional delivery as a Full-Stack Developer and Project Manager, aligning scope, timeline, and
 deliverables with developers and testers; built end-to-end website and deployed to the cloud for the stakeholders.
    <ul style={{ marginTop: "0.6rem", paddingLeft: "1.5rem", lineHeight: "1.8" }}>
@@ -245,7 +245,7 @@ domain for production.</li>
 dependencies; coordinated developers and testers; produced status reports for stakeholders; facilitated Scrum
 meetings and reviews.</li>
     </ul>
-    <strong>Senior Project Manager – CLEVO(Oct of 2010–Sep of 2023, Taipei)</strong>
+    <strong>Senior Project Manager – CLEVO (Oct of 2010–Sep of 2023, Taipei)</strong>
     Led 13+ standard and ODM projects, including Epson, from RFQ to mass production using Waterfall. Managed
 cross-functional teams of 25+ and ensured on-time delivery through NPI (New Product Introduction) processes.
    <ul style={{ marginTop: "0.6rem", paddingLeft: "1.5rem", lineHeight: "1.8" }}>
