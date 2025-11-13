@@ -4,7 +4,7 @@ import {
   Github, ExternalLink, Mail, MapPin, Award,
   Cpu, Database, Cloud, Code2, ShieldCheck, Globe2, BarChart3, Linkedin,Users, ClipboardList, ListTodo, Repeat,Wrench,Download
 } from "lucide-react";
-import "../assets/styles/resume.css"; // ✅ 確認有引入新的 CSS
+import "../assets/styles/resume.css"; // 
 import profileImg from '../assets/profile.png';
 
 // -----------------------------
@@ -149,6 +149,16 @@ export default function ResumePage() {
   
   const [showModal, setShowModal] = React.useState(false);
 const [selectedCert, setSelectedCert] = React.useState(null);
+
+const [visitorCount, setVisitorCount] = React.useState(null);
+
+useEffect(() => {
+  fetch("https://vdrp3cawga.execute-api.us-east-1.amazonaws.com/dev/getVisitorCount")
+    .then((res) => res.json())
+    .then((data) => setVisitorCount(data.count))
+    .catch((err) => console.error("Fetch error:", err));
+}, []);
+
 
 const handleDownloadClick = (cert) => {
   setSelectedCert(cert);
@@ -325,7 +335,9 @@ const cancelResumeDownload = () => {
             <motion.a key={i} href={p.href} className="card-glass"
               initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               transition={{ duration: .4, delay: i * .05 }}>
-              <div className="card-title">{p.name}</div>
+              <div className="card-title">
+  <span style={{ textDecoration: "underline" }}>{p.name}</span>
+</div>
               <div className="card-muted">{p.blurb}</div>
               <div className="chips">{p.tags.map((t, j) => <Chip key={j}>{t}</Chip>)}</div>
             </motion.a>
@@ -358,7 +370,11 @@ const cancelResumeDownload = () => {
       </div>
 
       {/* Footer */}
-      <footer className="footer">© {tYear} {PROFILE.name}. Built with React.</footer>
+      <footer className="footer">© {tYear} {PROFILE.name}. Built with React.  {visitorCount !== null && (
+    <span style={{ marginLeft: "1rem", fontSize: "14px", color: "#888" }}>
+      Visitor Count: {visitorCount}
+    </span>
+  )}</footer>
       <ConfirmModal
   show={showModal}
   certName={selectedCert?.name}
