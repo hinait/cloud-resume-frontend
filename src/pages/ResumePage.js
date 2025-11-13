@@ -153,7 +153,7 @@ const [selectedCert, setSelectedCert] = React.useState(null);
 const [visitorCount, setVisitorCount] = React.useState(null);
 
 useEffect(() => {
-  fetch("https://vdrp3cawga.execute-api.us-east-1.amazonaws.com/dev/getVisitorCount")
+  fetch("https://rudet6yugb.execute-api.us-east-1.amazonaws.com/dev/getVisitorCount")
     .then((res) => res.json())
     .then((data) => setVisitorCount(data.count))
     .catch((err) => console.error("Fetch error:", err));
