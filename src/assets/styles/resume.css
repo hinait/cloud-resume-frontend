@@ -59,7 +59,24 @@ body {
   justify-content: center;
   font-weight: 700;
 }
+.header-actions {
+  display: flex;          /* 讓裡面兩個 .btn 變成一排 */
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;    /* ⭐ 不要在 GitHub / LinkedIn 之間斷行 */
+}
 
+/* 小螢幕下，把按鈕變瘦一點，比較不容易爆版 */
+@media (max-width: 480px) {
+  .header-actions .btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 14px;
+  }
+
+  .brand-left span:last-child {
+    font-size: 13px;      /* 網域字體也稍微縮一下，幫兩顆鈕騰空間 */
+  }
+}
 /* Hero */
 .resume-hero {
   /* text-align: center; */
@@ -80,7 +97,8 @@ body {
   justify-content: flex-start;
   gap: 18px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 17px;
+   flex-wrap: wrap;
 }
 .lead {
   margin-top: 16px;
@@ -97,7 +115,7 @@ body {
 
 .resume-container strong {
   display: block;             /* 每個 strong 都變成獨立一行，像標題 */
-  font-size: 19px;            /* 比正文大一點點，看起來像小標題 */
+  font-size: 18px;            /* 比正文大一點點，看起來像小標題 */
   font-weight: 600;           /* 你已經用了 strong，但可以加強清晰度 */
   margin-top: 0.8rem;         /* 與上一段拉開距離 */
   margin-bottom: 0.9rem;      /* 與 ul 拉開距離 */
@@ -107,7 +125,7 @@ body {
 /* 用更具體的 class 限定 strong */
 .resume-container .work-experience strong {
   display: block;
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 600;
   margin-top: 1.2rem;
   margin-bottom: 0.9rem;
@@ -325,7 +343,7 @@ body {
   min-width: 0;
   text-align: left;
 }
-/* Education 整塊左對齊 */
+/* header-actionscation 整塊左對齊 */
 .education-section {
   text-align: left;
 }

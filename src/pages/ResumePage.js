@@ -104,9 +104,20 @@ function ConfirmModal({ show, onConfirm, onCancel, certName }) {
     <div className="modal-backdrop">
       <div className="modal-box">
         <p>Do you want to download<strong>{certName}?</strong></p>
-        <div className="modal-buttons">
-          <button className="btn-primary" onClick={onConfirm}>Yes</button>
-          <button className="btn" onClick={onCancel}>Cancel</button>
+         <div className="modal-buttons">
+          <a
+            className="btn-primary"
+            href="/cv/HINA_CV.pdf"
+            target="_blank"
+            rel="noreferrer"
+            onClick={onConfirm} 
+          >
+            Yes
+          </a>
+
+          <button className="btn" onClick={onCancel}>
+            Cancel
+          </button>
         </div>
       </div>
     </div>
@@ -143,12 +154,6 @@ const handleResumeClick = () => {
 };
 
 const confirmResumeDownload = () => {
-   const link = document.createElement('a');
-  link.href = "/cv/HINA_CV.pdf";
-  link.download = "HINA_CV.pdf"; // 
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
   setShowResumeModal(false);
 };
 
@@ -209,7 +214,7 @@ const cancelResumeDownload = () => {
 <div className="resume-section">
   <h2 className="h2">About Me</h2>
   <p className="lead">
-    I’m a Project Manager with over seven years of experience leading large-scale projects.<br />
+   I’m a Project Manager with over seven years of experience leading large-scale projects for international clients such as Epson.<br />
     I’m now expanding into software and cloud development, having recently earned my Master of Information Technology in New Zealand.<br />
     My background spans managing global ODM teams in hardware, including laptops, IoT devices, and networking products.<br /><br />
     
@@ -324,7 +329,7 @@ availability.</li>
   </strong>
   <p className="lead">
     This live website showcases my full-stack cloud resume project. It features a React-based frontend and a Node.js backend, deployed using AWS services including Lambda (serverless), API Gateway (routing), DynamoDB (visitor counter), and Amplify.<br />
-    <a href="https://github.com/hinait/cloud-resume-backend" target="_blank" rel="noreferrer">Visit GitHub repo →</a>
+    <a href="https://github.com/hinait/cloud-resume-frontend" target="_blank" rel="noreferrer">Visit GitHub repo →</a>
   </p>
 <strong style={{ marginBottom: "0", display: "block" }}>
     Project 2: Nutrition Tracking Website
@@ -342,7 +347,7 @@ query the USDA FoodData API; implemented search functionality with responsive, u
 React frontend and Node.js backend integrating the FileMaker database ; built the
 Remittance page end-to-end and deployed on AWS Amplify (frontend) and EC2 + Nginx (backend). Worked in
 Scrum with stakeholder and internal team.<br />
-    <a href="https://github.com/A2025Y/nova-health-filemaker-integration-backend" target="_blank" rel="noreferrer">View GitHub repo →</a>
+    <a href="https://github.com/A2025Y/nova-health-filemaker-integration" target="_blank" rel="noreferrer">View GitHub repo →</a>
   </p>
 </div>
 
