@@ -52,7 +52,7 @@ const SKILL_GROUPS = [
     ],
   },
   {
-    category: "Project & Team",
+    category: "Project & Soft Skills",
     skills: [
       { label: "Project Management", icon: ClipboardList },
       { label: "Framework: Waterfall / Scrum", icon: Repeat },
@@ -219,10 +219,10 @@ const cancelResumeDownload = () => {
 <div className="resume-section">
   <h2 className="h2">About Me</h2>
   <p className="lead">
-    I’m a Project Manager with over seven years of experience leadinglarge-scale hardware and IoT projects.<br />
-    I’m now expanding intosoftware and cloud development, having recently earned my Masterof Information Technology in New Zealand.<br />
-    My background spans managing global ODM teams in hardwaremanufacturing, including laptops, IoT devices, and industrial PCs.<br /><br />
-    During my internship at Nova IT, I also led full-stack developmentprojects, working with React, Node.js, and AWS.
+    I’m a Project Manager with over seven years of experience leading large-scale projects.<br />
+    I’m now expanding into software and cloud development, having recently earned my Master of Information Technology in New Zealand.<br />
+    My background spans managing global ODM teams in hardware, including laptops, IoT devices, and networking products.<br /><br />
+    During my internship at Nova IT, I also led full-stack development projects, working with React, Node.js, and AWS.
     
     I bridge communication between clients, engineers, andstakeholders to ensure that technical outcomes align with business goals.
     With experience in both Waterfall and Scrum, I’m passionate about leading projects that deliver meaningful results.<br />
@@ -264,7 +264,7 @@ chain.</li>
       <li>Held regular Scrum meetings with engineering teams (hardware, mechanical, firmware, software) to monitor
 project progress.</li>
     </ul>
-     <strong>Assistant Project Manager – CASWELL (April of 2017–July of 2019, Taipei)</strong>
+     <strong>Assistant Project Manager – CASWELL (Sep of 2017–April of 2019, Taipei)</strong>
     Led NPI(New Product Introduction) and lifecycle management for networking hardware, including 14+ new
 product launches and 78+ maintenance products.
        <ul style={{ marginTop: "0.6rem", paddingLeft: "1.5rem", lineHeight: "1.8" }}>
@@ -274,7 +274,7 @@ product launches and 78+ maintenance products.
       <li>Maintained BOM(Bill of Materials) and monitored key components (e.g., SSD, RAM) for compatibility and
 availability.</li>
     </ul>
-    <strong>Manager Assistant – Sunkind (July of 2015–Sep of 2017, Taipei)</strong>
+    <strong>Manager Assistant – Sunkind (Aug of 2015–Sep of 2017, Taipei)</strong>
     Tracked and managed all project progress and coordination for IT infrastructure construction.
   </p>
 </div>
