@@ -190,12 +190,6 @@ const cancelResumeDownload = () => {
         <span><Award size={14} /> Certifications: {CERTS.length}</span>
       </p>
       <p className="lead"><span ref={rotatingRef} /></p>
-      <div className="action-row">
-        <a className="btn-primary" style={{ cursor: "pointer" }} onClick={handleResumeClick}>
-          <ExternalLink size={16} /> Download Resume
-        </a>
-        <a className="btn" href={`mailto:${PROFILE.email}`}><Mail size={16} /> Contact</a>
-      </div>
     </div>
 
     {/* 右側：圖片 */}
@@ -343,7 +337,8 @@ query the USDA FoodData API; implemented search functionality with responsive, u
 React frontend and Node.js backend integrating the FileMaker database ; built the
 Remittance page end-to-end and deployed on AWS Amplify (frontend) and EC2 + Nginx (backend). Worked in
 Scrum with stakeholder and internal team.<br />
-    <a href="https://github.com/A2025Y/nova-health-filemaker-integration" target="_blank" rel="noreferrer">View GitHub repo →</a>
+Due to confidentiality agreements, the live data connection is not shown.  
+  A demo video is available upon request.
   </p>
 </div>
 

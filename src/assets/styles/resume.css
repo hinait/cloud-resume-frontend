@@ -137,13 +137,6 @@ body {
   color: var(--text);  
 }
 
-.action-row {
-  margin-top: 24px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
 /* Buttons */
 .btn, .btn-primary {
   display: inline-flex;
