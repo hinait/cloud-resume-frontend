@@ -60,10 +60,10 @@ body {
   font-weight: 700;
 }
 .header-actions {
-  display: flex;          /* 讓裡面兩個 .btn 變成一排 */
+  display: flex;          
   align-items: center;
   gap: 8px;
-  white-space: nowrap;    /* ⭐ 不要在 GitHub / LinkedIn 之間斷行 */
+  white-space: nowrap;    
 }
 
 /* 小螢幕下，把按鈕變瘦一點，比較不容易爆版 */
@@ -114,12 +114,12 @@ body {
 }
 
 .resume-container strong {
-  display: block;             /* 每個 strong 都變成獨立一行，像標題 */
-  font-size: 18px;            /* 比正文大一點點，看起來像小標題 */
-  font-weight: 600;           /* 你已經用了 strong，但可以加強清晰度 */
-  margin-top: 0.8rem;         /* 與上一段拉開距離 */
-  margin-bottom: 0.9rem;      /* 與 ul 拉開距離 */
-  color: var(--text);         /* 可選：確保標題不是灰色 muted 字 */
+  display: block;             
+  font-size: 18px;            
+  font-weight: 600;           
+  margin-top: 0.8rem;         
+  margin-bottom: 0.9rem;      
+  color: var(--text);         
 }
 
 /* 用更具體的 class 限定 strong */
@@ -129,6 +129,12 @@ body {
   font-weight: 600;
   margin-top: 1.2rem;
   margin-bottom: 0.9rem;
+}
+
+.resume-section.work-experience .lead,
+.resume-section.work-experience li,
+.resume-section.work-experience strong {
+  color: var(--text);  
 }
 
 .action-row {
@@ -197,7 +203,7 @@ body {
 }
 .grid-3 {
   display: grid;
-   grid-template-columns: repeat(3, minmax(0, 1fr));  /* ✅ 固定三欄 */
+   grid-template-columns: repeat(3, minmax(0, 1fr));  
   gap: 1.2rem;
 }
 @media (max-width: 768px) {
@@ -208,10 +214,10 @@ body {
 
 /* 專門給 Certification 用的卡片排版 */
 .cert-grid .card-glass {
-  min-height: 110px;           /* 統一基本高度，可以依喜好微調 */
+  min-height: 110px;           
   display: flex;
   flex-direction: column;
-  justify-content: center;     /* 讓文字在卡片中間，看起來比較工整 */
+  justify-content: center;    
 }
 /* Cards */
 .card-glass {
@@ -263,7 +269,7 @@ body {
 }
 
 .profile-photo {
-  width: clamp(120px, 26vw, 220px); /* 跟著螢幕縮，最小 120 最大 220 */
+  width: clamp(120px, 26vw, 220px); 
   height: clamp(120px, 26vw, 220px);
   border-radius: 50%;
   object-fit: cover;
@@ -302,7 +308,7 @@ body {
   width: 320px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.2);
   text-align: center;
-  font-size: 16px; /* 字體大小提升 */
+  font-size: 16px; 
   line-height: 1.4;
 }
 
@@ -327,7 +333,7 @@ body {
   border-radius: 6px;
   cursor: pointer;
 }
-/* Hero 內部：左右排列容器 */
+
 .hero-inner {
    max-width: 1100px;
   margin: 0 auto;
@@ -337,23 +343,21 @@ body {
   column-gap: 24px;
 }
 
-/* 左側文字區 */
+
 .hero-text {
 
   min-width: 0;
   text-align: left;
 }
-/* header-actionscation 整塊左對齊 */
+
 .education-section {
   text-align: left;
 }
 
-/* 每個學校一塊 */
 .education-section .edu-item {
   margin-top: 14px;
 }
 
-/* 學校名稱 */
 .education-section .edu-school {
   margin: 0;
   font-size: 18px;
@@ -361,7 +365,6 @@ body {
   color: var(--text);
 }
 
-/* degree / meta 行 */
 .education-section .edu-degree,
 .education-section .edu-meta {
   margin: 2px 0;

@@ -107,9 +107,6 @@ function ConfirmModal({ show, onConfirm, onCancel, certName }) {
          <div className="modal-buttons">
           <a
             className="btn-primary"
-            href="/cv/HINA_CV.pdf"
-            target="_blank"
-            rel="noreferrer"
             onClick={onConfirm} 
           >
             Yes
@@ -155,6 +152,7 @@ const handleResumeClick = () => {
 
 const confirmResumeDownload = () => {
   setShowResumeModal(false);
+  window.open("/cv/HINA_CV.pdf", "_blank");
 };
 
 const cancelResumeDownload = () => {
@@ -214,11 +212,9 @@ const cancelResumeDownload = () => {
 <div className="resume-section">
   <h2 className="h2">About Me</h2>
   <p className="lead">
-   I’m a Project Manager with over seven years of experience leading large-scale projects for international clients such as Epson.<br />
-    I’m now expanding into software and cloud development, having recently earned my Master of Information Technology in New Zealand.<br />
-    My background spans managing global ODM teams in hardware, including laptops, IoT devices, and networking products.<br /><br />
-    
-    With experience in both Waterfall and Scrum, I’m passionate about leading projects that deliver meaningful results.<br />
+   I am a Project Manager with 7+ years of NPI and product development experience across standard and ODM laptops, IoT devices, and networking products, including work with global clients such as Epson.<br />
+    I am currently completing a Master of Information Technology in New Zealand and building hands-on full-stack and cloud projects (React/Node/AWS).<br />
+    I am seeking opportunities in cloud engineering or software project management.<br />
   </p>
 </div>
 
