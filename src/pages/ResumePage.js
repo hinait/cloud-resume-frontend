@@ -246,7 +246,7 @@ dependencies; coordinated developers and testers; produced status reports for st
 meetings and reviews.</li>
     </ul>
     <p className="lead">
-    <strong>Full-time Master’s Student, University of Waikato, New Zealand(Feb of 2024–Nov of 2025, New Zealand)</strong>
+    <strong>Full-time Master’s Student, University of Waikato, New Zealand (Feb of 2024–Nov of 2025, New Zealand)</strong>
     Pursuing a full-time Master of Information Technology at the University of Waikato, focusing on software development and cloud computing.</p>
     <p className="lead">
     <strong>Senior Project Manager – CLEVO (Oct of 2020–Sep of 2023, Taipei)</strong>
