@@ -207,8 +207,10 @@ const cancelResumeDownload = () => {
   <h2 className="h2">About Me</h2>
   <p className="lead">
    I am a Project Manager with 7+ years of NPI and product development experience across standard and ODM laptops, IoT devices, and networking products, including work with global clients such as Epson.<br />
-   From 2024 to 2025, I pursued a Master of Information Technology in New Zealand and completed a Software Project Manager / Full-Stack Internship at Nova IT, graduating in November 2025.<br />
-    I am seeking opportunities in Cloud Engineering and Software / Cloud Project Management.<br />
+   From 2024 to 2025, I pursued a Master of Information Technology in New Zealand and completed a Software Project
+Manager / Full-Stack Internship at Nova IT. <br />
+I am expected to graduate in November 2025 and will be available to
+start work approximately one month after receiving an offer.
   </p>
 </div>
 
